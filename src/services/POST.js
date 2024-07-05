@@ -1,17 +1,13 @@
 import axios from 'axios';
-import { API_KEY } from './API_KEY';
 
 export async function PostServices(phone, email, firstName, lastName, jobType, jobSource, address, city, state, zipCode, area, startDate, startTime, endTime, technician) {
-    const baseURL = 'https://api.pipedrive.com/v1';
-    const params = {
-        api_token: API_KEY,
-    };
+    const baseURL = 'http://localhost:3001/';
     const data = {
         phone, email, firstName, lastName, jobType, jobSource, address, city, state, zipCode, area, startDate, startTime, endTime, technician
     };
 
     try {
-        const result = await axios.post(`${baseURL}/deals`, data, params)
+        const result = await axios.post(`${baseURL}/users`, data)
         return result.status;
     } catch (error) {
         return error;
@@ -20,3 +16,4 @@ export async function PostServices(phone, email, firstName, lastName, jobType, j
 
 export default PostServices;
 
+// "server": "json-server -w server/db.json -p 3001",

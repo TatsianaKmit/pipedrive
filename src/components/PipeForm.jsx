@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import postServices from '../services/POST'
+import PostServices from '../services/POST'
 import { Button } from '@gravity-ui/uikit'
 import { useFormik } from 'formik'
 import { PipeValidationSchema } from './ValidationSchema';
@@ -39,13 +39,16 @@ export const PipeForm = () => {
         validationSchema: PipeValidationSchema,
         onSubmit: async (values) => {
             try {
-                const result = await postServices(values);
+                const result = await PostServices(values);
+                console.log('values', values);
                 console.log(result);
             } catch (error) {
                 console.error(error);
             }
         },
     })
+
+
 
     const style = {
         width: '300px',
