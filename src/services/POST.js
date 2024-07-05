@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-export async function PostServices(phone, email, firstName, lastName, jobType, jobSource, address, city, state, zipCode, area, startDate, startTime, endTime, technician) {
-    const baseURL = 'http://localhost:3001/';
-    const data = {
-        phone, email, firstName, lastName, jobType, jobSource, address, city, state, zipCode, area, startDate, startTime, endTime, technician
-    };
+export async function PostServices(data) {
+    const baseURL = 'http://localhost:3001';
 
     try {
         const result = await axios.post(`${baseURL}/users`, data)
@@ -15,5 +12,3 @@ export async function PostServices(phone, email, firstName, lastName, jobType, j
 }
 
 export default PostServices;
-
-// "server": "json-server -w server/db.json -p 3001",

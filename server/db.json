@@ -1,72 +1,102 @@
 {
-    "users": [
-        {
-            "phone": "555-123-4567",
-            "email": "example@example.com",
-            "firstName": "John",
-            "lastName": "Doe",
-            "jobType": "Plumbing",
-            "jobSource": "Referral",
-            "address": "123 Main St",
-            "city": "Cityville",
-            "state": "CA",
-            "zipCode": "12345",
-            "area": "Bathroom",
-            "startDate": "2022-03-15",
-            "startTime": "09:00 AM",
-            "endTime": "11:00 AM",
-            "technician": "Mike"
-        },
-        {
-            "phone": "555-987-6543",
-            "email": "test@test.com",
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "jobType": "Electrical",
-            "jobSource": "Online search",
-            "address": "456 Oak St",
-            "city": "Townsville",
-            "state": "NY",
-            "zipCode": "54321",
-            "area": "Kitchen",
-            "startDate": "2022-04-10",
-            "startTime": "10:00 AM",
-            "endTime": "12:00 PM",
-            "technician": "Sarah"
-        },
-        {
-            "phone": "555-222-3333",
-            "email": "user@example.com",
-            "firstName": "Michael",
-            "lastName": "Johnson",
-            "jobType": "HVAC",
-            "jobSource": "Walk-in",
-            "address": "789 Pine St",
-            "city": "Villagetown",
-            "state": "TX",
-            "zipCode": "67890",
-            "area": "Living room",
-            "startDate": "2022-05-20",
-            "startTime": "08:00 AM",
-            "endTime": "10:00 AM",
-            "technician": "Chris"
-        },
-        {
-            "phone": "555-666-7777",
-            "email": "customer@example.com",
-            "firstName": "Emily",
-            "lastName": "Brown",
-            "jobType": "Painting",
-            "jobSource": "Flyer",
-            "address": "321 Elm St",
-            "city": "Hamletville",
-            "state": "FL",
-            "zipCode": "13579",
-            "area": "Exterior",
-            "startDate": "2022-06-30",
-            "startTime": "01:00 PM",
-            "endTime": "03:00 PM",
-            "technician": "Alexs"
-        }
-    ]
+  "users": [
+    {
+      "phone": "555-123-4567",
+      "email": "example@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "jobType": "Plumbing",
+      "jobSource": "Referral",
+      "address": "123 Main St",
+      "city": "Cityville",
+      "state": "CA",
+      "zipCode": "12345",
+      "area": "Bathroom",
+      "startDate": "2022-03-15",
+      "startTime": "09:00 AM",
+      "endTime": "11:00 AM",
+      "technician": "Mike",
+      "id": "21f9"
+    },
+    {
+      "phone": "555-987-6543",
+      "email": "test@test.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "jobType": "Electrical",
+      "jobSource": "Online search",
+      "address": "456 Oak St",
+      "city": "Townsville",
+      "state": "NY",
+      "zipCode": "54321",
+      "area": "Kitchen",
+      "startDate": "2022-04-10",
+      "startTime": "10:00 AM",
+      "endTime": "12:00 PM",
+      "technician": "Sarah",
+      "id": "a54f"
+    },
+    {
+      "phone": "555-222-3333",
+      "email": "user@example.com",
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "jobType": "HVAC",
+      "jobSource": "Walk-in",
+      "address": "789 Pine St",
+      "city": "Villagetown",
+      "state": "TX",
+      "zipCode": "67890",
+      "area": "Living room",
+      "startDate": "2022-05-20",
+      "startTime": "08:00 AM",
+      "endTime": "10:00 AM",
+      "technician": "Chris",
+      "id": "02a9"
+    },
+    {
+      "phone": "555-666-7777",
+      "email": "customer@example.com",
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "jobType": "Painting",
+      "jobSource": "Flyer",
+      "address": "321 Elm St",
+      "city": "Hamletville",
+      "state": "FL",
+      "zipCode": "13579",
+      "area": "Exterior",
+      "startDate": "2022-06-30",
+      "startTime": "01:00 PM",
+      "endTime": "03:00 PM",
+      "technician": "Alexs",
+      "id": "f013"
+    },
+    {
+      "id": "ddfb",
+      "phone": "(333) 333-3333",
+      "email": "test",
+      "firstName": "test",
+      "lastName": "test",
+      "jobType": [
+        "Option 3"
+      ],
+      "jobSource": [
+        "Option 4"
+      ],
+      "address": "test",
+      "city": "test",
+      "state": "test",
+      "zipCode": "2222",
+      "area": [
+        "Option 1"
+      ],
+      "startDate": "2024-07-09T21:00:00.000Z",
+      "startTime": "2024-07-05T18:00:00.792Z",
+      "endTime": "2024-07-05T18:15:00.000Z",
+      "technician": [
+        "Option 3"
+      ]
+    }
+  ]
 }
