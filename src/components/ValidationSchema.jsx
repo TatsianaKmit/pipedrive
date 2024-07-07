@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const PipeValidationSchema = Yup.object().shape({
+export const Validation = Yup.object().shape({
     firstName: Yup.string().required("Enter First name"),
     lastName: Yup.string().required("Enter Last name"),
     phone: Yup.string()

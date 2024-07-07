@@ -1,19 +1,23 @@
 import '@gravity-ui/uikit/styles/fonts.css';
 import '@gravity-ui/uikit/styles/styles.css';
 import { ThemeProvider } from "@gravity-ui/uikit";
-import { PipeForm } from './components/PipeForm'
-import './App.scss';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './layouts/Layout';
+import FormPage from './pages/FormPage';
 
 function App() {
   return (
-    <ThemeProvider theme="light">
-      <div className="App">
-        <div className='container'>
-          <PipeForm />
-        </div>
-      </div>
-    </ThemeProvider>
+    <div className="app">
+      <ThemeProvider theme="light">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<FormPage />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </div>
   );
 }
 
 export default App;
+

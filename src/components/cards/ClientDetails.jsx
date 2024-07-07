@@ -1,13 +1,13 @@
 import React from 'react'
 import InputMask from "react-input-mask";
-import { Card, TextInput } from '@gravity-ui/uikit'
+import { TextInput } from '@gravity-ui/uikit'
 
-export const ClientDetails = ({ style, formik }) => {
+export const ClientDetails = ({ formik }) => {
     return (
-        <div className='pipeform_card'>
-            <Card style={style} view="raised" type="container" size="l">
+        <div className='form__card'>
+            <div className='card__wrapper'>
                 <h2>Client details</h2>
-                <div className='two_inputs'>
+                <div className='card__inputs'>
                     <TextInput placeholder='First name'
                         type="text"
                         value={formik.values.firstName}
@@ -47,7 +47,7 @@ export const ClientDetails = ({ style, formik }) => {
                     validationState={formik.errors.email ? "invalid" : undefined}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
-            </Card>
+            </div>
         </div>
     )
 }

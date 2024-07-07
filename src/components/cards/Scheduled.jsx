@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, Select } from '@gravity-ui/uikit'
+import { Select } from '@gravity-ui/uikit'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 
-export const Scheduled = ({ style, formik }) => {
+export const Scheduled = ({ formik }) => {
     return (
-        <div className='pipeform_card'>
-            <Card style={style} view="raised" type="container" size="l">
+        <div className='form__card'>
+            <div className='card__wrapper'>
                 <h2>Scheduled</h2>
                 <DatePicker
                     placeholderText='Start date'
@@ -43,7 +43,7 @@ export const Scheduled = ({ style, formik }) => {
 
                     }}
                 />
-                {formik.errors.startDate ? <div className='error'>{formik.errors.startDate}</div> : null}
+                {formik.errors.startDate ? <div className='react-datepicker__error'>{formik.errors.startDate}</div> : null}
                 <div className='date-pickers'>
                     <div className='date-picker'>
                         <DatePicker
@@ -59,7 +59,7 @@ export const Scheduled = ({ style, formik }) => {
                                 formik.setFieldValue('startTime', date);
                             }}
                         />
-                        {formik.errors.startTime ? <div className='error'>{formik.errors.startTime}</div> : null}
+                        {formik.errors.startTime ? <div className='react-datepicker__error'>{formik.errors.startTime}</div> : null}
                     </div>
                     <div className='date-picker'>
                         <DatePicker
@@ -75,7 +75,7 @@ export const Scheduled = ({ style, formik }) => {
                                 formik.setFieldValue('endTime', date);
                             }}
                         />
-                        {formik.errors.endTime ? <div className='error'>{formik.errors.endTime}</div> : null}
+                        {formik.errors.endTime ? <div className='react-datepicker__error'>{formik.errors.endTime}</div> : null}
                     </div>
                 </div>
                 <Select filterable={true}
@@ -92,7 +92,7 @@ export const Scheduled = ({ style, formik }) => {
                     <Select.Option value="Option 2">Option 3</Select.Option>
                     <Select.Option value="Option 3">Option 4</Select.Option>
                 </Select>
-            </Card>
+            </div>
         </div >
     )
 }

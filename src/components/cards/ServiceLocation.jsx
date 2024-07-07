@@ -1,10 +1,10 @@
 import React from 'react'
-import { Card, TextInput, Select } from '@gravity-ui/uikit'
+import { TextInput, Select } from '@gravity-ui/uikit'
 
-export const ServiceLocation = ({ style, formik }) => {
+export const ServiceLocation = ({ formik }) => {
     return (
-        <div className='pipeform_card'>
-            <Card style={style} view="raised" type="container" size="l">
+        <div className='form__card'>
+            <div className='card__wrapper'>
                 <h2>Service location</h2>
                 <TextInput placeholder='Address'
                     type="text"
@@ -28,7 +28,7 @@ export const ServiceLocation = ({ style, formik }) => {
                     validationState={formik.errors.state ? "invalid" : undefined}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
-                <div className='two_inputs'>
+                <div className='card__inputs'>
                     <TextInput placeholder='Zip code'
                         type="text"
                         value={formik.values.zipCode}
@@ -52,7 +52,7 @@ export const ServiceLocation = ({ style, formik }) => {
                         <Select.Option value="Option 4">Option 4</Select.Option>
                     </Select>
                 </div>
-            </Card>
+            </div>
         </div>
     )
 }

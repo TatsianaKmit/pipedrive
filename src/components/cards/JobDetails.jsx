@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, TextInput, Select } from '@gravity-ui/uikit'
+import { TextInput, Select } from '@gravity-ui/uikit'
 
-export const JobDetails = ({ style, formik }) => {
+export const JobDetails = ({ formik }) => {
   return (
-    <div className='pipeform_card'>
-      <Card style={style} view="raised" type="container" size="l">
+    <div className='form__card'>
+      <div className='card__wrapper'>
         <h2>Job details</h2>
-        <div className='two_inputs'>
+        <div className='card__inputs'>
           <Select filterable={true}
             multiple={false}
             width={'100%'}
@@ -38,7 +38,7 @@ export const JobDetails = ({ style, formik }) => {
           </Select>
         </div>
         <TextInput placeholder='Job description (optional)' size='xl' />
-      </Card>
+      </div>
     </div>
   )
 }

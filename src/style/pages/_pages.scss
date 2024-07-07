@@ -1,0 +1,102 @@
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 50px;
+
+    &__wrapper {
+        margin-left: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.main {
+    margin: auto;
+}
+
+.footer {
+    margin-top: auto;
+    height: 30px;
+
+    &__wrapper {
+        @extend .header__wrapper;
+    }
+}
+
+.form {
+    &__container {
+        margin: 0 auto;
+        max-width: 700px;
+        width: 90%;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        grid-template-rows: 1fr 1fr 0.1fr;
+        gap: 10px;
+    }
+
+    &__card {
+        width: 100%;
+        min-height: 280px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+}
+
+.card {
+    &__wrapper {
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        >h2 {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__inputs {
+        display: flex;
+        width: 100%;
+    }
+}
+
+// gravity-ui
+
+.g-text-input_view_normal {
+    margin: 4px;
+}
+
+.g-select {
+    margin: 4px;
+    width: 100%;
+}
+
+// react-datepicker
+
+.react-datepicker {
+    &-wrapper {
+        width: 90%;
+        margin: 4px;
+    }
+
+    &__view-calendar-icon {
+        input {
+            width: 90%;
+        }
+    }
+
+    &__error {
+        color: red;
+    }
+}
