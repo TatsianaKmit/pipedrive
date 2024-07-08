@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PostServices from '../services/POST'
-import { Button } from '@gravity-ui/uikit'
 import { useFormik } from 'formik'
 import { Validation } from './ValidationSchema';
 import { ClientDetails, JobDetails, Scheduled, ServiceLocation } from './cards/index'
@@ -13,6 +12,10 @@ export const Form = () => {
         formik.handleSubmit();
     }
 
+    const handleSaveInfo = () => {
+        localStorage.setItem(formik.values, JSON.stringify(formik.values));
+    };
+
     const formik = useFormik({
         initialValues: {
             phone: "",
@@ -21,6 +24,7 @@ export const Form = () => {
             lastName: "",
             jobType: "",
             jobSource: "",
+            description: "",
             address: "",
             city: "",
             state: "",
@@ -39,11 +43,20 @@ export const Form = () => {
                 const result = await PostServices(values);
                 console.log('values', values);
                 console.log(result);
+                formik.resetForm();
+                localStorage.removeItem(formik.values);
             } catch (error) {
                 console.error(error);
             }
         },
     })
+
+    useEffect(() => {
+        const formData = JSON.parse(localStorage.getItem(formik.values));
+        if (formData) {
+            formik.setValues(formData);
+        }
+    }, []);
 
     return (
         <>
@@ -54,17 +67,17 @@ export const Form = () => {
                     <ServiceLocation formik={formik} />
                     <Scheduled formik={formik} />
                     {formSubmitted ? (
-                        <Button onClick={handleSubmit}>
+                        <button className="form__button" onClick={handleSubmit}>
                             Request is sent
-                        </Button>
+                        </button>
                     ) : (
-                        <Button onClick={handleSubmit}>
+                        <button className="form__button" onClick={handleSubmit}>
                             Create job
-                        </Button>
+                        </button>
                     )}
-                    <Button>
+                    <button className="form__button" onClick={handleSaveInfo}>
                         Save info
-                    </Button>
+                    </button>
                 </div >
             </div>
         </>

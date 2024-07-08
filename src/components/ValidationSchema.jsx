@@ -6,8 +6,9 @@ export const Validation = Yup.object().shape({
     phone: Yup.string()
         .matches(/^\(\d{3}\) \d{3}-\d{4}$/, "Please use the following phone format: (777) 777-7777")
         .required("Enter phone number"),
-    // email: Yup.string()
-    // .matches(/^(([^<>()\[]\.,;:\s@"]+(.[^<>()\[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/, "Please use the following e-mail format: email@example.com"),
+    email: Yup.string()
+        .email("Please use the following e-mail format: email@example.com")
+        .required("Enter E-mail"),
     jobType: Yup.array()
         .required("Select Job Type"),
     jobSource: Yup.array()
@@ -19,15 +20,16 @@ export const Validation = Yup.object().shape({
     state: Yup.string()
         .required("Enter State"),
     zipCode: Yup.string()
-        .required("Enter Zip code"),
+        .matches(/^[0-9]+$/, "Zip Code must contain only numbers")
+        .required("Enter Zip Code"),
     area: Yup.array()
         .required("Select Area"),
     startDate: Yup.string()
-        .required("Select Start date"),
+        .required("Select Start Date"),
     startTime: Yup.string()
-        .required("Select Start time"),
+        .required("Select Start Time"),
     endTime: Yup.string()
-        .required("Select End time"),
+        .required("Select End Time"),
     technician: Yup.array()
         .required("Select Technician")
 });

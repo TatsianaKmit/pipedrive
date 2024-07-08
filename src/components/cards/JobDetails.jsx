@@ -37,7 +37,13 @@ export const JobDetails = ({ formik }) => {
             <Select.Option value="Option 4">Option 4</Select.Option>
           </Select>
         </div>
-        <TextInput placeholder='Job description (optional)' size='xl' />
+        <TextInput
+          placeholder='Job description (optional)'
+          id="description"
+          value={formik.values.description}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          size='xl' />
       </div>
     </div>
   )

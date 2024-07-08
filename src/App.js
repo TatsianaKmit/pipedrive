@@ -3,7 +3,7 @@ import '@gravity-ui/uikit/styles/styles.css';
 import { ThemeProvider } from "@gravity-ui/uikit";
 import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
-import FormPage from './pages/FormPage';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <ThemeProvider theme="light">
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<FormPage />} />
+            <Route index element={<RegistrationPage />} />
           </Route>
         </Routes>
       </ThemeProvider>

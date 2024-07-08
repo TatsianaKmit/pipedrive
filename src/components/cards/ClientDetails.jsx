@@ -18,17 +18,17 @@ export const ClientDetails = ({ formik }) => {
                         onBlur={formik.handleBlur} />
                     <TextInput placeholder='Last name'
                         type="text"
-                        value={formik.valueslastName}
+                        value={formik.values.lastName}
                         id="lastName"
                         errorMessage={formik.errors.lastName || ""}
                         validationState={formik.errors.lastName ? "invalid" : undefined}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur} />
                 </div>
-                <InputMask mask="(999) 999-9999" value={formik.phone} onChange={formik.handleChange} onBlur={formik.handleBlur}>
+                <InputMask mask="(999) 999-9999" value={formik.values.phone} onChange={formik.handleChange} onBlur={formik.handleBlur}>
                     {() => (
                         <TextInput
-                            placeholder='Phone'
+                            placeholder='Phone: (777) 777-7777'
                             type="text"
                             value={formik.phone}
                             id="phone"
@@ -39,9 +39,9 @@ export const ClientDetails = ({ formik }) => {
                         />
                     )}
                 </InputMask>
-                <TextInput placeholder='Email (optional)'
+                <TextInput placeholder='Email: email@example.com'
                     type="text"
-                    value={formik.email}
+                    value={formik.values.email}
                     id="email"
                     errorMessage={formik.errors.email || ""}
                     validationState={formik.errors.email ? "invalid" : undefined}
