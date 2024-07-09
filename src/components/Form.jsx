@@ -5,15 +5,21 @@ import { Validation } from './ValidationSchema';
 import { ClientDetails, JobDetails, Scheduled, ServiceLocation } from './cards/index'
 
 export const Form = () => {
-    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formSaved, setFormSaved] = useState(false)
+    const [requestSent, setRequestSent] = useState(false)
 
     const handleSubmit = () => {
-        setFormSubmitted(true);
-        formik.handleSubmit();
+        formik.validateForm().then((errors) => {
+            if (Object.keys(errors).length === 0) {
+                setRequestSent(true);
+            }
+            formik.handleSubmit()
+        });
     }
 
     const handleSaveInfo = () => {
         localStorage.setItem(formik.values, JSON.stringify(formik.values));
+        setFormSaved(true)
     };
 
     const formik = useFormik({
@@ -66,18 +72,26 @@ export const Form = () => {
                     <JobDetails formik={formik} />
                     <ServiceLocation formik={formik} />
                     <Scheduled formik={formik} />
-                    {formSubmitted ? (
-                        <button className="form__button" onClick={handleSubmit}>
-                            Request is sent
-                        </button>
-                    ) : (
-                        <button className="form__button" onClick={handleSubmit}>
-                            Create job
-                        </button>
-                    )}
-                    <button className="form__button" onClick={handleSaveInfo}>
-                        Save info
-                    </button>
+                    <div className='form__buttons'>
+                        {requestSent ? (
+                            <button className="form__button" onClick={handleSubmit}>
+                                Request is sent
+                            </button>
+                        ) : (
+                            <button className="form__button" onClick={handleSubmit}>
+                                Create request
+                            </button>
+                        )}
+                        {formSaved ? (
+                            <button className="form__button" onClick={handleSaveInfo}>
+                                Saved
+                            </button>
+                        ) : (
+                            <button className="form__button" onClick={handleSaveInfo}>
+                                Save info
+                            </button>
+                        )}
+                    </div>
                 </div >
             </div>
         </>

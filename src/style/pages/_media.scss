@@ -20,6 +20,10 @@
             grid-template-columns: 400px;
             justify-content: center;
         }
+
+        &__buttons {
+            grid-column: unset;
+        }
     }
 }
 

@@ -7,7 +7,7 @@ export async function PostServices(data) {
         const result = await axios.post(`${baseURL}/users`, data)
         return result.status;
     } catch (error) {
-        return error;
+        return false;
     }
 }
 
