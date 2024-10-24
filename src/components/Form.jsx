@@ -45,8 +45,46 @@ export const Form = () => {
         validateOnBlur: false,
         validationSchema: Validation,
         onSubmit: async (values) => {
+
+            const pipedriveData = {
+                title: "Deal Title",
+                creator_user_id: 1,
+                owner_id: 1,
+                value: 200,
+                person_id: 1,
+                org_id: 1,
+                stage_id: 1,
+                pipeline_id: 1,
+                currency: "USD",
+                add_time: new Date().toISOString(),
+                update_time: new Date().toISOString(),
+                stage_change_time: new Date().toISOString(),
+                status: "open",
+                is_deleted: false,
+                probability: 90,
+                lost_reason: "Lost Reason",
+                visible_to: 7,
+                close_time: null,
+                won_time: null,
+                lost_time: null,
+                local_won_date: null,
+                local_lost_date: null,
+                local_close_date: null,
+                expected_close_date: null,
+                label_ids: [],
+                origin: "ManuallyCreated",
+                origin_id: null,
+                channel: 52,
+                channel_id: null,
+                acv: 120,
+                arr: 120,
+                mrr: 10,
+                custom_fields: {}
+            };
+
+
             try {
-                const result = await PostServices(values);
+                const result = await PostServices(pipedriveData);
                 console.log('values', values);
                 console.log(result);
                 formik.resetForm();
