@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pipedrive/static/css/main.6458ad41.css",
-    "main.js": "/pipedrive/static/js/main.b470ecdc.js",
+    "main.js": "/pipedrive/static/js/main.38e05cf0.js",
     "index.html": "/pipedrive/index.html",
     "main.6458ad41.css.map": "/pipedrive/static/css/main.6458ad41.css.map",
-    "main.b470ecdc.js.map": "/pipedrive/static/js/main.b470ecdc.js.map"
+    "main.38e05cf0.js.map": "/pipedrive/static/js/main.38e05cf0.js.map"
   },
   "entrypoints": [
     "static/css/main.6458ad41.css",
-    "static/js/main.b470ecdc.js"
+    "static/js/main.38e05cf0.js"
   ]
 }
